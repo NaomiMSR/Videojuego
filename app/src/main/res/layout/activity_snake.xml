@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/fondomemorama">
+
+    <!-- Header con información del juego -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#DF7930"
+            android:padding="12dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conchas"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFFFD700"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <Button
+                android:id="@+id/btn_back_to_menu"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Menú"
+                android:textSize="12sp"
+                android:textColor="#FFFFFFFF"
+                android:background="#FF8A2BE2"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_marginBottom="3dp"/>
+
+            <Button
+                android:id="@+id/btn_new_game"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="🏖️"
+                android:textSize="12sp"
+                android:textColor="#FFFFFFFF"
+                android:background="#FFFF69B4"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#DF7930"
+            android:padding="12dp"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mejor Verano"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_high_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFFFD700"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Área del juego - Océano profundo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#FF000080"
+        android:padding="8dp">
+
+        <GridLayout
+            android:id="@+id/game_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:rowCount="15"
+            android:columnCount="15"
+            android:background="#FF001122" />
+
+    </LinearLayout>
+
+    <!-- Controles direccionales con botón de menú central -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <!-- Botón ARRIBA -->
+        <Button
+            android:id="@+id/btn_up"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="⬆"
+            android:textSize="20sp"
+            android:textColor="#FFFFFFFF"
+            android:background="#FFFF1493"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Fila central: IZQUIERDA y DERECHA -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_left"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="⬅"
+                android:textSize="20sp"
+                android:textColor="#FFFFFFFF"
+                android:background="#FFFF1493"
+                android:layout_marginEnd="40dp" />
+
+            <Button
+                android:id="@+id/btn_right"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="➡"
+                android:textSize="20sp"
+                android:textColor="#FFFFFFFF"
+                android:background="#FFFF1493"
+                android:layout_marginStart="40dp" />
+
+        </LinearLayout>
+
+        <!-- Botón ABAJO -->
+        <Button
+            android:id="@+id/btn_down"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="⬇"
+            android:textSize="20sp"
+            android:textColor="#FFFFFFFF"
+            android:background="#FFFF1493"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <!-- Estado del juego con mensaje de bienvenida -->
+    <TextView
+        android:id="@+id/tv_game_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¡Bienvenida a Cousins Beach! 🏖️"
+        android:textColor="#FFFFFFFF"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:padding="12dp" />
+
+</LinearLayout>

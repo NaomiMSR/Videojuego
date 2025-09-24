@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondomemorama"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvPares"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pares: 0/8"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@color/white"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tvVidas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vidas: 10"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@color/white"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnReiniciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reiniciar Juego"
+            android:backgroundTint="#1F3B75"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:backgroundTint="#1F3B75"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- Scroll con las cartas -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridLayout
+            android:id="@+id/gridMemorama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignMargins"
+            android:columnCount="4"
+            android:useDefaultMargins="true"
+            android:padding="16dp">
+
+            <!-- 16 CARTAS (8 PARES) -->
+            <ImageButton
+                android:id="@+id/carta1"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta2"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta3"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta4"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta5"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta6"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta7"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta8"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta9"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta10"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta11"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta12"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta13"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta14"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta15"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+            <ImageButton
+                android:id="@+id/carta16"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
+                android:layout_columnWeight="1"
+                android:scaleType="centerCrop"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/logo" />
+
+
+        </GridLayout>
+    </ScrollView>
+</LinearLayout>
