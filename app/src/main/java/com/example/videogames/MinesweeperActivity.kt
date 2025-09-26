@@ -2,6 +2,7 @@ package com.example.videogames
 
 import android.content.Context
 import android.graphics.Color
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -23,6 +24,10 @@ class MinesweeperActivity : AppCompatActivity() {
     private lateinit var btnMedium: Button
     private lateinit var btnHard: Button
     private lateinit var btnBackToMenu: Button
+
+    // Sound Components
+    private var mediaPlayer: MediaPlayer? = null
+    private var perderSound: MediaPlayer? = null
 
     // Game Variables
     private var rows = 9
@@ -50,8 +55,22 @@ class MinesweeperActivity : AppCompatActivity() {
         setContentView(R.layout.activity_minesweeper)
 
         initializeUI()
+        initializeSounds()
         setupClickListeners()
         initializeGame()
+    }
+
+    private fun initializeSounds() {
+        try {
+            // Reproducir intro al inicio (solo una vez)
+            mediaPlayer = MediaPlayer.create(this, R.raw.intro)
+            mediaPlayer?.start()
+
+            // Inicializar sonido de perder
+            perderSound = MediaPlayer.create(this, R.raw.perder)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     private fun initializeUI() {
@@ -324,6 +343,14 @@ class MinesweeperActivity : AppCompatActivity() {
         } else {
             tvGameStatus.text = "¡Juego terminado! Inténtalo de nuevo"
             btnNewGame.text = "Reiniciar"
+
+            // Reproducir sonido de perder
+            try {
+                perderSound?.start()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+
             // Revelar todas las minas
             for (i in 0 until rows) {
                 for (j in 0 until cols) {
@@ -368,5 +395,13 @@ class MinesweeperActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         stopTimer()
+
+        // Liberar recursos de audio
+        try {
+            mediaPlayer?.release()
+            perderSound?.release()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 }
